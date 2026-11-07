@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc-container {
+    width: 600px;
+    background-color: #2b2b2b;
+    border: 4px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.calc-header {
+    background: linear-gradient(180deg, #007A00 0%, #006400 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #ffffff;
+}
+
+
+.calc-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calc-table td {
+    padding: 12px;
+    border: 1px solid #444444;
+}
+
+.label-cell {
+    width: 35%;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #26211e; 
+    border-right: 2px solid #ffffff !important;
+}
+
+.row-input {
+    background-color: #111111;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.style-input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.style-btn {
+    background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.style-btn:active {
+    background: #d5d5d5;
+}
+
+#calc-table button:active { transform: scale(0.98); }
+
+
+.row-result {
+    background: linear-gradient(180deg, #6ba4c7 0%, #467290 100%);
+}
+
+.result-val {
+    color: #ffffff;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.shake-animation {
+    animation: shakeEffect 0.4s ease-in-out;
+}
+
+@keyframes shakeEffect {
+    0%, 100% { transform: translateX(0); }
+    15% { transform: translateX(-6px) rotate(-0.5deg); }
+    30% { transform: translateX(5px) rotate(0.5deg); }
+    45% { transform: translateX(-4px) rotate(-0.3deg); }
+    60% { transform: translateX(3px) rotate(0.3deg); }
+    75% { transform: translateX(-1px); }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #1e1915;
+    background-image: linear-gradient(45deg, #113366 25%, transparent 25%), 
+                      linear-gradient(-45deg, #113366 25%, transparent 25%), 
+                      linear-gradient(45deg, transparent 75%, #113366 75%), 
+                      linear-gradient(-45deg, transparent 75%, #113366 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+}
+.loader {
+  --color-1: #fff;
+  --color-2: #ff3d00;
+  --size: 0.95px;
+
+  transform: rotateZ(45deg);
+  perspective: calc(1000 * var(--size));
+  border-radius: 50%;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  color: var(--color-1);
+}
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: var(--color-2);
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0 0 0 currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0 currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0 -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
